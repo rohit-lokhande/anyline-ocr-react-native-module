@@ -1,0 +1,8 @@
+<resources>
+    <string name="error_unknown_scan_mode">Unknown scan mode: </string>
+    <string name="error_invalid_json_data">Config json is invalid.</string>
+    <string name="error_invalid_segment_config">Semgent config not valid. Must have equal amount of titles and modes.</string>
+    <string name="error_accessing_camera">Error while accessing camera.</string>
+    <string name="error_licence_invalid">Error: Anyline license invalid.</string>
+    <string name="error_occurred">An error occurred.</string>
+</resources>

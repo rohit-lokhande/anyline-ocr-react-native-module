@@ -1,0 +1,30 @@
+{
+  "name": "react-native-example-app",
+  "version": "51.4.0",
+  "private": true,
+  "scripts": {
+    "initProject": "yarn add expo && yarn add ../../plugin",
+    "reinstall": "yarn remove anyline-ocr-react-native-module && yarn add ../../plugin",
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios --device",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "anyline-ocr-react-native-module": "../../plugin",
+    "expo": "^49.0.13",
+    "expo-dev-client": "~2.4.6",
+    "expo-modules-autolinking": "0.8.1",
+    "expo-splash-screen": "~0.20.4",
+    "expo-status-bar": "~1.6.0",
+    "hermes-engine": "^0.11.0",
+    "jsc-android": "^241213.1.0",
+    "react": "18.2.0",
+    "react-native": "0.72.7"
+  },
+  "description": "React Native example app",
+  "main": "index.js",
+  "license": "MIT"
+}

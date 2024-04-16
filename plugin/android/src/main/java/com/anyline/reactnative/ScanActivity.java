@@ -42,7 +42,6 @@ public class ScanActivity extends AppCompatActivity {
     private ActivityScanBinding binding;
     private ScanView scanView;
 
-    private float dpFactor = 0;
     private boolean defaultOrientationApplied;
     private int orientation;
 
@@ -78,8 +77,6 @@ public class ScanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityScanBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        dpFactor = getResources().getDisplayMetrics().density;
 
         orientation = this.getResources().getConfiguration().orientation;
 
@@ -163,7 +160,7 @@ public class ScanActivity extends AppCompatActivity {
 
                 buttonLayoutParams.gravity = Gravity.TOP | Gravity.RIGHT;
                 String alignment = rotateButtonConfig.getAlignment();
-                if (alignment.length() > 0) {
+                if (!alignment.isEmpty()) {
                     if (alignment.equals("top_left")) {
                         buttonLayoutParams.gravity = Gravity.TOP | Gravity.LEFT;
                     }

@@ -1,5 +1,6 @@
 package com.anyline.reactnative;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -17,6 +18,7 @@ public class ImageTextConfig {
     public boolean hasImage = false;
     public int imageResId = 0;
 
+    @SuppressLint("DiscouragedApi")
     public ImageTextConfig(Context context, JSONObject jsonObject) {
         if (jsonObject.has("text")) {
             text = jsonObject.optString("text", "");

@@ -45,15 +45,14 @@ class AnylineSDKPlugin extends ReactContextBaseJavaModule implements ResultRepor
     public static final int RESULT_ERROR = 2;
     private static final String E_ERROR = "E_ERROR";
     private JSONObject configObject;
-    private ReactApplicationContext reactContext;
+    private final ReactApplicationContext reactContext;
     private String license;
-    private JSONObject options;
     private Callback onResultCallback;
     private Callback onErrorCallback;
     private Promise promise;
     private String returnMethod;
     private String config;
-    private AssetContextJsonParser assetContextJsonParser;
+    private final AssetContextJsonParser assetContextJsonParser;
 
     private static WrapperConfig wrapperConfig;
 
@@ -76,7 +75,7 @@ class AnylineSDKPlugin extends ReactContextBaseJavaModule implements ResultRepor
     @ReactMethod
     protected void setPluginVersion(final String pluginVersion) {
         wrapperConfig = new WrapperConfig.Wrapper(
-            new WrapperInfo(WrapperInfo.WrapperType.ReactNative, pluginVersion)
+                new WrapperInfo(WrapperInfo.WrapperType.ReactNative, pluginVersion)
         );
     }
 
@@ -112,10 +111,10 @@ class AnylineSDKPlugin extends ReactContextBaseJavaModule implements ResultRepor
 
             if (assetContext != null) {
                 AnylineUpdater.update(
-                    reactContext,
-                    assetContext,
-                    new AnylineUpdateDelegateImpl(reactContext, onUpdateError, onUpdateFinished),
-                    ScanController.PluginType.OCR
+                        reactContext,
+                        assetContext,
+                        new AnylineUpdateDelegateImpl(reactContext, onUpdateError, onUpdateFinished),
+                        ScanController.PluginType.OCR
                 );
             }
         } catch (JSONException e) {
@@ -197,8 +196,7 @@ class AnylineSDKPlugin extends ReactContextBaseJavaModule implements ResultRepor
                             hashMap
                     );
             onResponseCallback.invoke("Success");
-        }
-        catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             onResponseCallback.invoke("Error: " + e.getMessage());
         }
     }
@@ -211,8 +209,7 @@ class AnylineSDKPlugin extends ReactContextBaseJavaModule implements ResultRepor
                 if (promise != null) {
                     promise.resolve(String.valueOf(exportedFile));
                 }
-            }
-            else {
+            } else {
                 if (promise != null) {
                     promise.reject(E_ERROR, "Event cache is empty.");
                 }

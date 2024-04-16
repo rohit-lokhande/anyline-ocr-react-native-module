@@ -3,8 +3,8 @@ package com.anyline.reactnative;
 import org.json.JSONObject;
 
 public class Offset {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public Offset(JSONObject jsonObject) {
         this.x = jsonObject.optInt("x", 0);

@@ -14,7 +14,7 @@ public class RotateButtonConfig {
                 offset = new Offset(jsonObject.getJSONObject("offset"));
             }
             catch (JSONException e) {
-
+                e.printStackTrace();
             }
         }
     }

@@ -10,9 +10,9 @@ import io.anyline2.legacy.products.IAnylineUpdateDelegate;
 
 public class AnylineUpdateDelegateImpl implements IAnylineUpdateDelegate {
 
-    private ReactContext reactContext;
-    private Callback onUpdateError;
-    private Callback onUpdateFinished;
+    private final ReactContext reactContext;
+    private final Callback onUpdateError;
+    private final Callback onUpdateFinished;
 
     public AnylineUpdateDelegateImpl(
             ReactContext reactContext,
